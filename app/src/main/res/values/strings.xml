@@ -8,4 +8,19 @@
     <string name="title_activity_resultado">ResultadoActivity</string>
     <string name="compartir">Compartir</string>
     <string name="otra">Hacer otra pregunta</string>
+    <string name="si">SI</string>
+    <string name="no">NO</string>
+
+    <string name="palabra0">Palabra 0</string>
+    <string name="palabra1">Palabra 1</string>
+    <string name="palabra2">Palabra 2</string>
+    <string name="palabra3">Palabra 3</string>
+    <string name="palabra4">Palabra 4</string>
+    <string name="palabra5">Palabra 5</string>
+    <string name="palabra6">Palabra 6</string>
+    <string name="palabra7">Palabra 7</string>
+    <string name="palabra8">Palabra 8</string>
+    <string name="palabra9">Palabra 9</string>
+
+
 </resources>
