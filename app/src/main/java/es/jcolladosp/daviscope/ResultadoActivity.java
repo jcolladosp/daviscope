@@ -85,7 +85,7 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
             txSiNo.setText(getResources().getString(R.string.no));
         }
 
-        ArrayList<Integer> npalabras = generateRandomNumbers(3,10);
+        ArrayList<Integer> npalabras = generateRandomNumbers(3,42);
 
         String selector1 = "palabra"+npalabras.get(0).toString();
         String selector2 = "palabra"+npalabras.get(1).toString();

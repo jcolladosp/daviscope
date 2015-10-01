@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">Daviscope</string>
+
+
+    <string name="action_settings">Settings</string>
+    <string name="explicacion">Write your question here and press the button to answer</string>
+    <string name="aceptar">OK</string>
+    <string name="title_activity_resultado">ResultadoActivity</string>
+    <string name="compartir">Compartir</string>
+    <string name="otra">Hacer otra pregunta</string>
+    <string name="si">YES</string>
+    <string name="no">NO</string>
+
+    <string name="palabra0">CONFIDENCE</string>
+    <string name="palabra1">ACTION</string>
+    <string name="palabra2">DEDICATION</string>
+    <string name="palabra3">SINCERITY</string>
+    <string name="palabra4">HAPPINESS</string>
+    <string name="palabra5">WEALTH</string>
+    <string name="palabra6">WILL</string>
+    <string name="palabra7">FIRM</string>
+    <string name="palabra8">WISDOM</string>
+    <string name="palabra9">PROTECTION</string>
+    <string name="palabra10">LOVE</string>
+    <string name="palabra11">ALLIANCE</string>
+    <string name="palabra12">EVOLUTION</string>
+    <string name="palabra13">SUCCESS</string>
+    <string name="palabra14">JUST</string>
+    <string name="palabra15">FAIR</string>
+    <string name="palabra16">ALONE</string>
+    <string name="palabra17">SECLUSION</string>
+    <string name="palabra18">DESTINY</string>
+    <string name="palabra19">LUCK</string>
+    <string name="palabra20">POWER</string>
+    <string name="palabra21">SUCCESS</string>
+    <string name="palabra22">ILLUSION</string>
+    <string name="palabra23">TRANSIENT PASSION</string>
+    <string name="palabra24">REBIRTH</string>
+    <string name="palabra25">RADICAL CHANGE</string>
+    <string name="palabra26">SINGLENESS</string>
+    <string name="palabra27">FORBEARANCE</string>
+    <string name="palabra28">RETIREMENT</string>
+    <string name="palabra29">RETREAT</string>
+    <string name="palabra30">UNCERTAINTY</string>
+    <string name="palabra31">CAUTION</string>
+    <string name="palabra32">PROGRESS</string>
+    <string name="palabra33">EXIT</string>
+    <string name="palabra34">MISTRUST</string>
+    <string name="palabra35">DIFFICULT TIMES</string>
+    <string name="palabra36">AWARENESS</string>
+    <string name="palabra37">EDIT</string>
+    <string name="palabra38">SERENITY</string>
+    <string name="palabra39">MASTERSHIP</string>
+    <string name="palabra40">STRESS</string>
+    <string name="palabra41">INSECURITY</string>
+
+
+
+</resources>

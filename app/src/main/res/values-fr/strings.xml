@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Daviscope</string>
+
+
+    <string name="action_settings">Settings</string>
+    <string name="explicacion">Ecrivez votre question ici et appuyez sur le bouton pour votre réponse</string>
+    <string name="aceptar">OK</string>
+    <string name="title_activity_resultado">ResultadoActivity</string>
+    <string name="compartir">Compartir</string>
+    <string name="otra">Hacer otra pregunta</string>
+    <string name="si">OUI</string>
+    <string name="no">NON</string>
+
+    <string name="palabra0">CONFIANCE</string>
+    <string name="palabra1">ACTION</string>
+    <string name="palabra2">DEVOUEMENT</string>
+    <string name="palabra3">SINCERITE</string>
+    <string name="palabra4">BONHEUR</string>
+    <string name="palabra5">RICHESSE</string>
+    <string name="palabra6">VOLONTE</string>
+    <string name="palabra7">FERMETE</string>
+    <string name="palabra8">SAGESSE</string>
+    <string name="palabra9">PROTECTION</string>
+    <string name="palabra10">AMOUR</string>
+    <string name="palabra11">ALLIANCE</string>
+    <string name="palabra12">EVOLUTION</string>
+    <string name="palabra13">SUCCES</string>
+    <string name="palabra14">JUSTE</string>
+    <string name="palabra15">EQUITABLE</string>
+    <string name="palabra16">SOLITUDE</string>
+    <string name="palabra17">ISOLEMENT</string>
+    <string name="palabra18">DESTIN</string>
+    <string name="palabra19">CHANCE</string>
+    <string name="palabra20">PUISSANCE</string>
+    <string name="palabra21">REUSSITE</string>
+    <string name="palabra22">ILLUSION</string>
+    <string name="palabra23">PASSION PASSAGERE</string>
+    <string name="palabra24">RENAISSANCE</string>
+    <string name="palabra25">CHANGEMENT RADICALE</string>
+    <string name="palabra26">PERSEVERANCE</string>
+    <string name="palabra27">PATIENCE</string>
+    <string name="palabra28">RETRAITE</string>
+    <string name="palabra29">DESENGAGEMENT</string>
+    <string name="palabra30">DOUTE</string>
+    <string name="palabra31">PRUDENCE</string>
+    <string name="palabra32">PROGRES</string>
+    <string name="palabra33">SORTIE</string>
+    <string name="palabra34">MEFIANCE</string>
+    <string name="palabra35">TEMPS DIFFICILES</string>
+    <string name="palabra36">PRISE DE CONSCIENCE</string>
+    <string name="palabra37">MISE AU POINT</string>
+    <string name="palabra38">SERENITE</string>
+    <string name="palabra39">MAITRISE</string>
+    <string name="palabra40">TESIONS</string>
+    <string name="palabra41">INSECURITE</string>
+
+
+</resources>

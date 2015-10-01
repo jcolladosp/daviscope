@@ -1,9 +1,8 @@
 <resources>
     <string name="app_name">Daviscope</string>
 
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="explicacion">Introduce tu pregunta</string>
+    <string name="explicacion">Escribe aquí tu pregunta y pulsa el botón para la respuesta</string>
     <string name="aceptar">Aceptar</string>
     <string name="title_activity_resultado">ResultadoActivity</string>
     <string name="compartir">Compartir</string>
@@ -11,16 +10,49 @@
     <string name="si">SI</string>
     <string name="no">NO</string>
 
-    <string name="palabra0">Palabra 0</string>
-    <string name="palabra1">Palabra 1</string>
-    <string name="palabra2">Palabra 2</string>
-    <string name="palabra3">Palabra 3</string>
-    <string name="palabra4">Palabra 4</string>
-    <string name="palabra5">Palabra 5</string>
-    <string name="palabra6">Palabra 6</string>
-    <string name="palabra7">Palabra 7</string>
-    <string name="palabra8">Palabra 8</string>
-    <string name="palabra9">Palabra 9</string>
+    <string name="palabra0">CONFIANZA</string>
+    <string name="palabra1">ACCION</string>
+    <string name="palabra2">DEDICACION</string>
+    <string name="palabra3">SINCERIDAD</string>
+    <string name="palabra4">FELICIDAD</string>
+    <string name="palabra5">RIQUEZA</string>
+    <string name="palabra6">VOLUNTAD</string>
+    <string name="palabra7">FIRMEZA</string>
+    <string name="palabra8">SABIDURIA</string>
+    <string name="palabra9">PROTECCION</string>
+    <string name="palabra10">AMOR</string>
+    <string name="palabra11">ALIANZA</string>
+    <string name="palabra12">EVOLUCIÓN</string>
+    <string name="palabra13">EXITO</string>
+    <string name="palabra14">JUSTO</string>
+    <string name="palabra15">EQUILIBRADO</string>
+    <string name="palabra16">SOLEDAD</string>
+    <string name="palabra17">AISLAMIENTO</string>
+    <string name="palabra18">DESTINO</string>
+    <string name="palabra19">SUERTE</string>
+    <string name="palabra20">PODER</string>
+    <string name="palabra21">ÉXITO</string>
+    <string name="palabra22">ILUSIÓN</string>
+    <string name="palabra23">AVENTURA AMOROSA</string>
+    <string name="palabra24">RENACIMIENTO</string>
+    <string name="palabra25">CAMBIO RADICAL</string>
+    <string name="palabra26">PERSEVERANCIA</string>
+    <string name="palabra27">PACIENCIA</string>
+    <string name="palabra28">APARTARSE</string>
+    <string name="palabra29">RETROCESO</string>
+    <string name="palabra30">DUDA</string>
+    <string name="palabra31">PRECAUCIÓN</string>
+    <string name="palabra32">PROGRESO</string>
+    <string name="palabra33">SALIDA</string>
+    <string name="palabra34">DESCONFIANZA</string>
+    <string name="palabra35">TIEMPOS DIFÍCILES</string>
+    <string name="palabra36">TOMA DE CONCIENCIA</string>
+    <string name="palabra37">PUNTO DE VISTA</string>
+    <string name="palabra38">SERENIDAD</string>
+    <string name="palabra39">MAESTRÍA</string>
+    <string name="palabra40">TENSIONES</string>
+    <string name="palabra41">INSEGURIDAD</string>
+
 
 
 </resources>
