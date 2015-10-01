@@ -25,4 +25,16 @@
         android:layout_marginTop="40dp"
         android:layout_alignRight="@+id/txExplicacion"
         android:layout_alignEnd="@+id/txExplicacion" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/aceptar"
+        android:id="@+id/btAceptar"
+        android:layout_below="@+id/edPregunta"
+        android:layout_alignRight="@+id/edPregunta"
+        android:layout_alignEnd="@+id/edPregunta"
+        android:layout_marginTop="75dp"
+        android:layout_alignLeft="@+id/edPregunta"
+        android:layout_alignStart="@+id/edPregunta" />
 </RelativeLayout>

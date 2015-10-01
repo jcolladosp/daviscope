@@ -4,4 +4,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="explicacion">Introduce tu pregunta</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="title_activity_resultado">ResultadoActivity</string>
+    <string name="compartir">Compartir</string>
+    <string name="otra">Hacer otra pregunta</string>
 </resources>
