@@ -9,6 +9,8 @@ import android.net.Uri;
 import android.support.v7.app.ActionBar;
 
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -58,8 +60,8 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setTitle("Daviscope");
 
-            actionBar.setTitle("DaviScope");
 
         }
 

@@ -1,8 +1,10 @@
 package es.jcolladosp.daviscope;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -68,6 +70,7 @@ public class PreguntaActivity extends BaseActivity implements View.OnClickListen
         edpregunta = (EditText) findViewById(R.id.edPregunta);
 
     }
+
 
     @Override
     public void onClick(View v) {
