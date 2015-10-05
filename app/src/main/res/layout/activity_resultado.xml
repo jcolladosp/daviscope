@@ -12,18 +12,8 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Pregunta"
         android:id="@+id/txPregunta"
-        android:layout_marginTop="54dp"
+        android:layout_marginTop="29dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Si/NO"
-        android:id="@+id/txSiNo"
-        android:layout_marginTop="46dp"
-        android:layout_below="@+id/txPregunta"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -32,9 +22,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Palabra 1"
         android:id="@+id/txPalabra1"
-        android:layout_below="@+id/txSiNo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="41dp" />
+        android:layout_marginTop="29dp"
+        android:layout_below="@+id/txPregunta"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -42,10 +32,10 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Palabra 2"
         android:id="@+id/txPalabra2"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="25dp"
         android:layout_below="@+id/txPalabra1"
-        android:layout_alignLeft="@+id/txPalabra1"
-        android:layout_alignStart="@+id/txPalabra1" />
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -55,26 +45,33 @@
         android:id="@+id/txPalabra3"
         android:layout_marginTop="25dp"
         android:layout_below="@+id/txPalabra2"
-        android:layout_alignLeft="@+id/txPalabra2"
-        android:layout_alignStart="@+id/txPalabra2" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/compartir"
-        android:id="@+id/btCompartir"
-        android:layout_marginTop="29dp"
-        android:layout_below="@+id/txPalabra3"
-        android:layout_alignLeft="@+id/btOtra"
-        android:layout_alignStart="@+id/btOtra"
-        android:layout_alignRight="@+id/btOtra"
-        android:layout_alignEnd="@+id/btOtra" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/otra"
         android:id="@+id/btOtra"
+        android:layout_marginTop="17dp"
         android:layout_below="@+id/btCompartir"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/compartir"
+        android:id="@+id/textView"
+        android:layout_marginTop="36dp"
+        android:layout_below="@+id/txPalabra3"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:id="@+id/btCompartir"
+        android:cropToPadding="true"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/whatsapp" />
 </RelativeLayout>

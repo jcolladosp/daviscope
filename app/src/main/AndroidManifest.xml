@@ -18,7 +18,8 @@
         </activity>
         <activity
             android:name=".ResultadoActivity"
-            android:label="@string/title_activity_resultado" >
+            android:label="@string/title_activity_resultado"
+            android:configChanges="locale|orientation">
         </activity>
     </application>
 
