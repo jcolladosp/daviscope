@@ -12,12 +12,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 import es.jcolladosp.daviscope.Util.BaseActivity;
 
 public class PreguntaActivity extends BaseActivity implements View.OnClickListener {
 
     Button aceptar;
     EditText edpregunta;
+    RelativeLayout fondo;
     public String pregunta;
 
     @Override
@@ -28,6 +32,7 @@ public class PreguntaActivity extends BaseActivity implements View.OnClickListen
 
         setListeners();
         findViews();
+        generateBackground();
     }
 
 
@@ -71,7 +76,43 @@ public class PreguntaActivity extends BaseActivity implements View.OnClickListen
 
     }
 
+    private void generateBackground(){
+        fondo = (RelativeLayout) findViewById(R.id.fondoPregunta);
 
+         ArrayList<Integer> numbers =generateRandomNumbers(1, 4);
+        switch(numbers.get(0))
+        {
+            case 0:
+                fondo.setBackground(getResources().getDrawable(R.drawable.fondo1));
+                break;
+            case 1:
+                fondo.setBackground(getResources().getDrawable(R.drawable.fondo2));
+
+                break;
+            case 2:
+                fondo.setBackground(getResources().getDrawable(R.drawable.fondo3));
+                break;
+            case 3:
+                fondo.setBackground(getResources().getDrawable(R.drawable.fondo4));
+                break;
+
+
+        }
+
+    }
+
+    public ArrayList generateRandomNumbers(int nnumbers,int maxnumber){
+        ArrayList<Integer> numbers = new ArrayList<Integer>();
+        Random randomGenerator = new Random();
+        while (numbers.size() < nnumbers) {
+
+            int random = randomGenerator .nextInt(maxnumber);
+            if (!numbers.contains(random)) {
+                numbers.add(random);
+            }
+        }
+        return numbers;
+    }
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btAceptar) {
@@ -81,6 +122,7 @@ public class PreguntaActivity extends BaseActivity implements View.OnClickListen
             Intent i = new Intent(getApplicationContext(), ResultadoActivity.class);
             i.putExtra("pregunta", pregunta);
             startActivity(i);
+
         }
 
     }

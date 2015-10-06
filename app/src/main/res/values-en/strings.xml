@@ -11,6 +11,7 @@
     <string name="si">YES</string>
     <string name="no">NO</string>
     <string name="email">Contact</string>
+    <string name="hint">How will be my future?</string>
 
     <string name="palabra0">CONFIDENCE</string>
     <string name="palabra1">ACTION</string>

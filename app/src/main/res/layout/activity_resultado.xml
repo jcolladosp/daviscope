@@ -4,7 +4,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="es.jcolladosp.daviscope.ResultadoActivity">
+    tools:context="es.jcolladosp.daviscope.ResultadoActivity"
+    android:background="@drawable/fondo4"
+    android:id="@+id/fondoResultado">
 
     <TextView
         android:layout_width="wrap_content"
@@ -14,7 +16,10 @@
         android:id="@+id/txPregunta"
         android:layout_marginTop="29dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:textStyle="bold|italic"
+        android:textSize="20dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -22,7 +27,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Palabra 1"
         android:id="@+id/txPalabra1"
-        android:layout_marginTop="29dp"
+        android:layout_marginTop="38dp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
         android:layout_below="@+id/txPregunta"
         android:layout_centerHorizontal="true" />
 
@@ -35,7 +42,9 @@
         android:layout_marginTop="25dp"
         android:layout_below="@+id/txPalabra1"
         android:layout_alignWithParentIfMissing="false"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -45,33 +54,26 @@
         android:id="@+id/txPalabra3"
         android:layout_marginTop="25dp"
         android:layout_below="@+id/txPalabra2"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/otra"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:id="@+id/btOtra"
-        android:layout_marginTop="17dp"
+        android:background="@drawable/icono_bueno"
         android:layout_below="@+id/btCompartir"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/compartir"
-        android:id="@+id/textView"
-        android:layout_marginTop="36dp"
-        android:layout_below="@+id/txPalabra3"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
 
     <ImageButton
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:id="@+id/btCompartir"
         android:cropToPadding="true"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/whatsapp" />
+        android:background="@drawable/whatsapp"
+        android:layout_marginTop="64dp"
+        android:layout_below="@+id/txPalabra3"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

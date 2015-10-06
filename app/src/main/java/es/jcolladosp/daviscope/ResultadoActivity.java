@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,6 +44,7 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
     TextView txPalabra2;
     TextView txPalabra3;
     AlertDialog levelDialog;
+    RelativeLayout fondo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,7 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
         setListeners();
         findViews();
         generateRandomWords();
+        generateBackground();
 
         Intent intent = getIntent();
         String preguntaObtenida = intent.getExtras().getString("pregunta");
@@ -105,7 +108,7 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
-    private ArrayList generateRandomNumbers(int nnumbers,int maxnumber){
+    public ArrayList generateRandomNumbers(int nnumbers,int maxnumber){
         ArrayList<Integer> numbers = new ArrayList<Integer>();
         Random randomGenerator = new Random();
         while (numbers.size() < nnumbers) {
@@ -234,5 +237,29 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
         Intent refresh = new Intent(this, PreguntaActivity.class);
         startActivity(refresh);
         finish();
+    }
+    private void generateBackground(){
+        fondo = (RelativeLayout) findViewById(R.id.fondoResultado);
+
+        ArrayList<Integer> numbers =generateRandomNumbers(1, 4);
+        switch(numbers.get(0))
+        {
+            case 0:
+                fondo.setBackground(getResources().getDrawable(R.drawable.fondo1));
+                break;
+            case 1:
+                fondo.setBackground(getResources().getDrawable(R.drawable.fondo2));
+
+                break;
+            case 2:
+                fondo.setBackground(getResources().getDrawable(R.drawable.fondo3));
+                break;
+            case 3:
+                fondo.setBackground(getResources().getDrawable(R.drawable.fondo4));
+                break;
+
+
+        }
+
     }
 }
