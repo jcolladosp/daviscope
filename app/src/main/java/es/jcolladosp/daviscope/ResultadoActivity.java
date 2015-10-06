@@ -1,11 +1,13 @@
 package es.jcolladosp.daviscope;
 
+import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.support.v7.app.ActionBar;
 
 import android.os.Bundle;
@@ -49,17 +51,21 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        ArrayList<Integer> numbers =generateRandomNumbers(1, 4);
+
+
         setContentView(R.layout.activity_resultado);
 
         setListeners();
         findViews();
+        generateBackground(numbers.get(0));
         generateRandomWords();
-        generateBackground();
+
 
         Intent intent = getIntent();
         String preguntaObtenida = intent.getExtras().getString("pregunta");
         txPregunta.setText(preguntaObtenida);
-
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
@@ -79,10 +85,7 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             selectLanguage();
             return true;
@@ -194,10 +197,7 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
 
     }
     private void selectLanguage(){
-
-
-// Strings to Show In Dialog with Radio Buttons
-        final CharSequence[] items = {" English "," Español "," Français "};
+      final CharSequence[] items = {" English "," Español "," Français "};
 
         // Creating and Building the Dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -206,8 +206,7 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
             public void onClick(DialogInterface dialog, int item) {
 
 
-                switch(item)
-                {
+                switch (item) {
                     case 0:
                         setLocale("en");
                         break;
@@ -238,11 +237,11 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
         startActivity(refresh);
         finish();
     }
-    private void generateBackground(){
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+    private void generateBackground(int n){
         fondo = (RelativeLayout) findViewById(R.id.fondoResultado);
 
-        ArrayList<Integer> numbers =generateRandomNumbers(1, 4);
-        switch(numbers.get(0))
+        switch(n)
         {
             case 0:
                 fondo.setBackground(getResources().getDrawable(R.drawable.fondo1));
@@ -262,4 +261,11 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
         }
 
     }
+
+
+
+
 }
+
+
+

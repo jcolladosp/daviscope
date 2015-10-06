@@ -1,10 +1,18 @@
 package es.jcolladosp.daviscope;
 
+import android.annotation.TargetApi;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.net.Uri;
+import android.os.Build;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,6 +21,7 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Random;
 
 import es.jcolladosp.daviscope.Util.BaseActivity;
@@ -23,6 +32,7 @@ public class PreguntaActivity extends BaseActivity implements View.OnClickListen
     EditText edpregunta;
     RelativeLayout fondo;
     public String pregunta;
+    AlertDialog levelDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +43,15 @@ public class PreguntaActivity extends BaseActivity implements View.OnClickListen
         setListeners();
         findViews();
         generateBackground();
+
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(false);
+            actionBar.setTitle("Daviscope");
+
+
+        }
+
     }
 
 
@@ -46,18 +65,32 @@ public class PreguntaActivity extends BaseActivity implements View.OnClickListen
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            selectLanguage();
+            return true;
+        }
+        if (id == R.id.ajuda) {
+            Intent send = new Intent(Intent.ACTION_SENDTO);
+            String uriText = "mailto:" + Uri.encode("jousselin.new.antique@gmail.com") +
+                    "?subject=" + Uri.encode(getResources().getString(R.string.email) + "Daviscope") +
+                    "&body=" + Uri.encode("");
+            Uri uri = Uri.parse(uriText);
+
+            send.setData(uri);
+            startActivityForResult(Intent.createChooser(send, getResources().getString(R.string.email)), 1);
+
+            return true;
+        }
+        if (id == android.R.id.home) {
+            onBackPressed();
             return true;
         }
 
+
         return super.onOptionsItemSelected(item);
     }
+
 
     @Override
     public void onBackPressed() {
@@ -76,6 +109,7 @@ public class PreguntaActivity extends BaseActivity implements View.OnClickListen
 
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     private void generateBackground(){
         fondo = (RelativeLayout) findViewById(R.id.fondoPregunta);
 
@@ -113,6 +147,48 @@ public class PreguntaActivity extends BaseActivity implements View.OnClickListen
         }
         return numbers;
     }
+
+    private void selectLanguage(){
+        final CharSequence[] items = {" English "," Español "," Français "};
+
+        // Creating and Building the Dialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(getResources().getString(R.string.action_settings));
+        builder.setSingleChoiceItems(items, -1, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int item) {
+
+
+                switch (item) {
+                    case 0:
+                        setLocale("en");
+                        break;
+                    case 1:
+                        setLocale("es");
+
+                        break;
+                    case 2:
+                        setLocale("fr");
+                        break;
+
+
+                }
+                levelDialog.dismiss();
+            }
+        });
+        levelDialog = builder.create();
+        levelDialog.show();
+    }
+    public void setLocale(String lang) {
+        Locale myLocale = new Locale(lang);
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale = myLocale;
+        res.updateConfiguration(conf, dm);
+        Intent refresh = new Intent(this, PreguntaActivity.class);
+        startActivity(refresh);
+        finish();
+    }
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btAceptar) {
@@ -122,6 +198,7 @@ public class PreguntaActivity extends BaseActivity implements View.OnClickListen
             Intent i = new Intent(getApplicationContext(), ResultadoActivity.class);
             i.putExtra("pregunta", pregunta);
             startActivity(i);
+            edpregunta.setText("");
 
         }
 

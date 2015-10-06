@@ -7,43 +7,52 @@
     android:id="@+id/fondoPregunta"
     android:background="@drawable/fondo2">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/explicacion"
-        android:id="@+id/txExplicacion"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="88dp"
-        android:textSize="20dp"
-        android:textColor="@android:color/white"
-        android:textStyle="bold" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/edPregunta"
-        android:layout_below="@+id/txExplicacion"
-        android:layout_marginTop="40dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:hint="@string/hint"
-        android:textColor="@android:color/white"
-        android:gravity="center_horizontal"
-        android:textStyle="italic" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/explicacion"
+            android:id="@+id/txExplicacion"
+            android:layout_marginTop="52dp"
+            android:textSize="20dp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textAlignment="gravity"
+            android:gravity="center_horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/aceptar"
-        android:id="@+id/btAceptar"
-        android:layout_below="@+id/edPregunta"
-        android:layout_marginTop="75dp"
-        android:layout_alignLeft="@+id/txExplicacion"
-        android:layout_alignStart="@+id/txExplicacion"
-        android:layout_alignRight="@+id/txExplicacion"
-        android:layout_alignEnd="@+id/txExplicacion" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/edPregunta"
+            android:layout_below="@+id/txExplicacion"
+            android:layout_marginTop="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:hint="@string/hint"
+            android:textColor="@android:color/white"
+            android:gravity="center_horizontal"
+            android:textStyle="italic" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/aceptar"
+            android:id="@+id/btAceptar"
+            android:layout_below="@+id/edPregunta"
+            android:layout_marginTop="75dp"
+            android:layout_alignLeft="@+id/txExplicacion"
+            android:layout_alignStart="@+id/txExplicacion"
+            android:layout_alignRight="@+id/txExplicacion"
+            android:layout_alignEnd="@+id/txExplicacion" />
+    </RelativeLayout>
+
 </RelativeLayout>
