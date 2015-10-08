@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v7.app.ActionBar;
@@ -33,6 +34,7 @@ public class PreguntaActivity extends BaseActivity implements View.OnClickListen
     RelativeLayout fondo;
     public String pregunta;
     AlertDialog levelDialog;
+    MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,8 @@ public class PreguntaActivity extends BaseActivity implements View.OnClickListen
         setListeners();
         findViews();
         generateBackground();
+
+        mp = MediaPlayer.create(this, R.raw.sonido);
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -193,6 +197,7 @@ public class PreguntaActivity extends BaseActivity implements View.OnClickListen
     public void onClick(View v) {
         if (v.getId() == R.id.btAceptar) {
 
+            mp.start();
             pregunta = edpregunta.getText().toString();
 
             Intent i = new Intent(getApplicationContext(), ResultadoActivity.class);

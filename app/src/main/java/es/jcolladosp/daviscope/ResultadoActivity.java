@@ -6,16 +6,18 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+
 import android.net.Uri;
 import android.os.Build;
 import android.support.v7.app.ActionBar;
 
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.text.Html;
+
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 import android.widget.ImageButton;
@@ -36,7 +38,7 @@ import android.util.DisplayMetrics;
 
 import es.jcolladosp.daviscope.Util.BaseActivity;
 
-public class ResultadoActivity extends BaseActivity implements View.OnClickListener {
+public class ResultadoActivity extends BaseActivity implements View.OnClickListener, Animation.AnimationListener {
     Button volver;
     ImageButton compartir;
 
@@ -47,6 +49,9 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
     TextView txPalabra3;
     AlertDialog levelDialog;
     RelativeLayout fondo;
+    Animation an1;
+    Animation an2;
+    Animation an3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,10 +62,22 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
 
         setContentView(R.layout.activity_resultado);
 
+
         setListeners();
         findViews();
         generateBackground(numbers.get(0));
         generateRandomWords();
+
+
+
+        an1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
+        an2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
+        an3 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
+
+        an1.setAnimationListener(this);
+        an2.setAnimationListener(this);
+        an3.setAnimationListener(this);
+
 
 
         Intent intent = getIntent();
@@ -71,8 +88,9 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setTitle("Daviscope");
 
-
         }
+        txPalabra1.setVisibility(View.VISIBLE);
+        txPalabra1.startAnimation(an1);
 
     }
 
@@ -81,6 +99,32 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_resultado, menu);
         return true;
+    }
+
+    @Override
+    public void onAnimationStart(Animation animation) {
+
+    }
+
+    @Override
+    public void onAnimationEnd(Animation animation) {
+
+        if (animation == an1) {
+            txPalabra2.setVisibility(View.VISIBLE);
+            txPalabra2.startAnimation(an2);
+        }
+
+        if (animation == an2) {
+            txPalabra3.setVisibility(View.VISIBLE);
+            txPalabra3.startAnimation(an3);
+
+        }
+
+    }
+
+    @Override
+    public void onAnimationRepeat(Animation animation) {
+
     }
 
     @Override
@@ -139,6 +183,8 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
         txPalabra1.setText(getString(IdPal1));
         txPalabra2.setText(getString(IdPal2));
         txPalabra3.setText(getString(IdPal3));
+
+
     }
 
 
@@ -188,9 +234,11 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btOtra) {
+
             onBackPressed();
         }
         if (v.getId() == R.id.btCompartir) {
+
             onClickWhatsApp(v);
 
         }

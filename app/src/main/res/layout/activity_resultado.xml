@@ -41,7 +41,8 @@
                 android:textColor="@android:color/white"
                 android:textStyle="bold"
                 android:layout_below="@+id/txPregunta"
-                android:layout_centerHorizontal="true" />
+                android:layout_centerHorizontal="true"
+                android:visibility="invisible" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -54,7 +55,8 @@
                 android:layout_alignWithParentIfMissing="false"
                 android:layout_centerHorizontal="true"
                 android:textColor="@android:color/white"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="invisible" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -66,7 +68,8 @@
                 android:layout_below="@+id/txPalabra2"
                 android:layout_centerHorizontal="true"
                 android:textColor="@android:color/white"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="invisible" />
 
             <Button
                 android:layout_width="64dp"
