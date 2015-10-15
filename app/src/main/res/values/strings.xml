@@ -12,6 +12,10 @@
     <string name="email">Contactar</string>
     <string name="hint">¿Como va a ser mi futuro?</string>
 
+    <string name="pregun1">A la pregunta:</string>
+    <string name="pregun2">- Future App ha respondido:</string>
+    <string name="pregun3">Descargarla en:</string>
+
     <string name="palabra0">CONFIANZA</string>
     <string name="palabra1">ACCION</string>
     <string name="palabra2">DEDICACION</string>

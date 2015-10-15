@@ -50,8 +50,10 @@ public class PreguntaActivity extends BaseActivity implements View.OnClickListen
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(false);
-            actionBar.setTitle("Daviscope");
+            actionBar.setCustomView(R.layout.actionbar_custom);
+            actionBar.setDisplayShowTitleEnabled(false);
+            actionBar.setDisplayShowCustomEnabled(true);
+
 
 
         }

@@ -4,8 +4,7 @@ import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
+
 
 import android.net.Uri;
 import android.os.Build;
@@ -23,15 +22,13 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import java.util.ArrayList;
 import java.util.Random;
 
 import java.util.Locale;
-import android.os.Bundle;
-import android.app.Activity;
-import android.content.Intent;
+
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
@@ -41,9 +38,9 @@ import es.jcolladosp.daviscope.Util.BaseActivity;
 public class ResultadoActivity extends BaseActivity implements View.OnClickListener, Animation.AnimationListener {
     Button volver;
     ImageButton compartir;
-
+    String preguntaObtenida;
     TextView txPregunta;
-    TextView txSiNo;
+
     TextView txPalabra1;
     TextView txPalabra2;
     TextView txPalabra3;
@@ -81,12 +78,17 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
 
 
         Intent intent = getIntent();
-        String preguntaObtenida = intent.getExtras().getString("pregunta");
+        preguntaObtenida = intent.getExtras().getString("pregunta");
         txPregunta.setText(preguntaObtenida);
+
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
+            getSupportActionBar().setElevation(0);
+            actionBar.setCustomView(R.layout.actionbar_custom);
+            actionBar.setDisplayShowTitleEnabled(false);
+            actionBar.setDisplayShowCustomEnabled(true);
             actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setTitle("Daviscope");
+
 
         }
         txPalabra1.setVisibility(View.VISIBLE);
@@ -207,27 +209,14 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
 
     }
 
-    public void onClickWhatsApp(View view) {
+    public void onClickShare(View view) {
 
-        PackageManager pm=getPackageManager();
-        try {
-
-            Intent waIntent = new Intent(Intent.ACTION_SEND);
-            waIntent.setType("text/plain");
-            String text = "YOUR TEXT HERE";
-
-            PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
-            //Check if package exists or not. If not then code
-            //in catch block will be called
-            waIntent.setPackage("com.whatsapp");
-
-            waIntent.putExtra(Intent.EXTRA_TEXT, text);
-            startActivity(Intent.createChooser(waIntent, "Share with"));
-
-        } catch (PackageManager.NameNotFoundException e) {
-            Toast.makeText(this, "WhatsApp not Installed", Toast.LENGTH_SHORT)
-                    .show();
-        }
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT,  getResources().getString(R.string.pregun1)+ " "+ preguntaObtenida +" "+ getResources().getString(R.string.pregun2) +" "
+                + txPalabra1.getText().toString() +", "  + txPalabra2.getText().toString() +", " + txPalabra3.getText().toString() + ". "+getResources().getString(R.string.pregun3)
+                +  "http://bit.ly/futureapp");
+        startActivity(intent);
 
     }
 
@@ -239,7 +228,7 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
         }
         if (v.getId() == R.id.btCompartir) {
 
-            onClickWhatsApp(v);
+            onClickShare(v);
 
         }
 

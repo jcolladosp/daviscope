@@ -75,7 +75,7 @@
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:id="@+id/btOtra"
-                android:background="@drawable/icono_bueno"
+                android:background="@drawable/repeat"
                 android:layout_below="@+id/btCompartir"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp" />
@@ -85,7 +85,7 @@
                 android:layout_height="64dp"
                 android:id="@+id/btCompartir"
                 android:cropToPadding="true"
-                android:background="@drawable/whatsapp"
+                android:background="@drawable/share"
                 android:layout_marginTop="64dp"
                 android:layout_below="@+id/txPalabra3"
                 android:layout_centerHorizontal="true" />
