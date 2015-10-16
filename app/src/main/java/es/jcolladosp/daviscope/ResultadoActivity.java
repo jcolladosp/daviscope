@@ -4,14 +4,14 @@ import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-
-
 import android.net.Uri;
 import android.os.Build;
 import android.support.v7.app.ActionBar;
 
 import android.os.Bundle;
 
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -152,9 +152,31 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
             onBackPressed();
             return true;
         }
+        if (id == R.id.develop) {
+            developAlert();
+            return true;
+        }
 
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void developAlert(){
+
+        TextView tv  = new TextView(this);
+        tv.setMovementMethod(LinkMovementMethod.getInstance());
+        tv.setText(Html.fromHtml("Idea original: David Jousselin " +"<br />"+ "<a href=\"mailto:jousselin.new.antique@gmail.com\">Enviar Email</a>" +
+                "<br />"+"<br />" + "Desarrollo: Jose Collado" +"<br />" +"<a href=\"mailto:jose528@gmail.com\">Enviar Email</a>"  + "<br />" + "<a href=https://github.com/jcolladosp>GitHub</a>"));
+        tv.setTextColor(getResources().getColor(R.color.icons));
+        tv.setTextSize(20);
+        AlertDialog.Builder builder =
+                new AlertDialog.Builder(this, R.style.AppCompatAlertDialogStyle);
+        builder.setTitle(getResources().getString(R.string.develop));
+
+        builder.setView(tv);
+        builder.setPositiveButton("OK", null);
+
+        builder.show();
     }
 
     public ArrayList generateRandomNumbers(int nnumbers,int maxnumber){

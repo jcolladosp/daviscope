@@ -13,6 +13,11 @@
     <string name="email">Contact</string>
     <string name="hint">Comment sera mon avenir?</string>
 
+    <string name="pregun1">To the question:</string>
+    <string name="pregun2">- Future App has answered:</string>
+    <string name="pregun3">Download it in:</string>
+    <string name="develop">About</string>
+
     <string name="palabra0">CONFIANCE</string>
     <string name="palabra1">ACTION</string>
     <string name="palabra2">DEVOUEMENT</string>

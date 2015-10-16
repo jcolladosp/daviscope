@@ -40,19 +40,19 @@
             android:hint="@string/hint"
             android:textColor="@android:color/white"
             android:gravity="center_horizontal"
-            android:textStyle="italic" />
+            android:textStyle="italic"
+            android:textColorHint="@android:color/white" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="125dp"
+            android:layout_height="60dp"
             android:text="@string/aceptar"
             android:id="@+id/btAceptar"
+            android:layout_marginTop="67dp"
             android:layout_below="@+id/edPregunta"
-            android:layout_marginTop="75dp"
-            android:layout_alignLeft="@+id/txExplicacion"
-            android:layout_alignStart="@+id/txExplicacion"
-            android:layout_alignRight="@+id/txExplicacion"
-            android:layout_alignEnd="@+id/txExplicacion" />
+            android:layout_centerHorizontal="true"
+            android:background="@color/primary"
+            android:textStyle="bold" />
     </RelativeLayout>
 
 </RelativeLayout>

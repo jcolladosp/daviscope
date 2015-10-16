@@ -12,6 +12,11 @@
     <string name="no">NO</string>
     <string name="email">Contact</string>
     <string name="hint">How will be my future?</string>
+    <string name="develop">About</string>
+
+    <string name="pregun1">To the question:</string>
+    <string name="pregun2">- Future App has answered:</string>
+    <string name="pregun3">Download it in:</string>
 
     <string name="palabra0">CONFIDENCE</string>
     <string name="palabra1">ACTION</string>
