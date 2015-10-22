@@ -36,8 +36,8 @@ import android.util.DisplayMetrics;
 import es.jcolladosp.daviscope.Util.BaseActivity;
 
 public class ResultadoActivity extends BaseActivity implements View.OnClickListener, Animation.AnimationListener {
-    Button volver;
-    ImageButton compartir;
+    RelativeLayout volver;
+    RelativeLayout compartir;
     String preguntaObtenida;
     TextView txPregunta;
 
@@ -213,10 +213,10 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
 
 
     private void setListeners() {
-        volver = (Button) findViewById(R.id.btOtra);
+        volver = (RelativeLayout) findViewById(R.id.lyNueva);
         volver.setOnClickListener(this);
 
-        compartir = (ImageButton) findViewById(R.id.btCompartir);
+        compartir = (RelativeLayout) findViewById(R.id.lyShare);
         compartir.setOnClickListener(this);
 
     }
@@ -235,8 +235,9 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
 
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_TEXT,  getResources().getString(R.string.pregun1)+ " "+ preguntaObtenida +" "+ getResources().getString(R.string.pregun2) +" "
-                + txPalabra1.getText().toString() +", "  + txPalabra2.getText().toString() +", " + txPalabra3.getText().toString() + ". "+getResources().getString(R.string.pregun3)
+        intent.putExtra(Intent.EXTRA_TEXT,  getResources().getString(R.string.pregun1)+ " "+ preguntaObtenida +"\n"+"\n" +" "+ getResources().getString(R.string.pregun2) +"\n"
+               +"-" + txPalabra1.getText().toString() +", "  + txPalabra2.getText().toString() +", " + txPalabra3.getText().toString() + ". "
+                +"\n" + "\n"+getResources().getString(R.string.pregun3)
                 +  "http://bit.ly/futureapp");
         startActivity(intent);
 
@@ -244,11 +245,11 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.btOtra) {
+        if (v.getId() == R.id.lyNueva) {
 
             onBackPressed();
         }
-        if (v.getId() == R.id.btCompartir) {
+        if (v.getId() == R.id.lyShare) {
 
             onClickShare(v);
 

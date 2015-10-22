@@ -6,17 +6,19 @@
     <string name="explicacion">Ecrivez votre question ici et appuyez sur le bouton pour votre réponse</string>
     <string name="aceptar">OK</string>
     <string name="title_activity_resultado">ResultadoActivity</string>
-    <string name="compartir">Partager WhatsaApp</string>
+    <string name="compartir">Partager</string>
     <string name="otra">Poser une nouvelle question</string>
     <string name="si">OUI</string>
     <string name="no">NON</string>
     <string name="email">Contact</string>
     <string name="hint">Comment sera mon avenir?</string>
 
-    <string name="pregun1">To the question:</string>
-    <string name="pregun2">- Future App has answered:</string>
-    <string name="pregun3">Download it in:</string>
+    <string name="pregun1">A la question:</string>
+    <string name="pregun2">Future-App a répondue:</string>
+    <string name="pregun3">Télécharger en: </string>
     <string name="develop">About</string>
+
+    <string name="nuevapregunta">Nouvelle question</string>
 
     <string name="palabra0">CONFIANCE</string>
     <string name="palabra1">ACTION</string>

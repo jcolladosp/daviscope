@@ -5,7 +5,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="es.jcolladosp.daviscope.ResultadoActivity"
-    android:background="@color/primary"
+    android:background="@color/accent"
     android:id="@+id/fondoResultado">
 
 
@@ -16,7 +16,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:id="@+id/lypregun">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -71,24 +72,72 @@
                 android:textStyle="bold"
                 android:visibility="invisible" />
 
-            <Button
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:id="@+id/btOtra"
-                android:background="@drawable/repeat"
-                android:layout_below="@+id/btCompartir"
+            <RelativeLayout
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:background="@color/primary"
+                android:id="@+id/lyShare"
+                android:layout_alignTop="@+id/txPalabra3"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp" />
+                android:layout_marginTop="60dp">
 
-            <ImageButton
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:id="@+id/btCompartir"
-                android:cropToPadding="true"
-                android:background="@drawable/share"
-                android:layout_marginTop="64dp"
-                android:layout_below="@+id/txPalabra3"
-                android:layout_centerHorizontal="true" />
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/imageView2"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/share" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/compartir"
+                    android:id="@+id/textView2"
+                    android:textColor="@android:color/white"
+                    android:textSize="15dp"
+                    android:textIsSelectable="false"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/imageView2"
+                    android:layout_toStartOf="@+id/imageView2"
+                    android:layout_marginRight="26dp"
+                    android:layout_marginEnd="26dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:background="@color/primary"
+                android:id="@+id/lyNueva"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/lyShare"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/imageView"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/repeat" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/nuevapregunta"
+                    android:id="@+id/textView"
+                    android:textColor="@android:color/white"
+                    android:textSize="15dp"
+                    android:textIsSelectable="false"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/imageView"
+                    android:layout_toStartOf="@+id/imageView" />
+            </RelativeLayout>
+
         </RelativeLayout>
     </ScrollView>
 

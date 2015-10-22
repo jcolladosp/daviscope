@@ -6,7 +6,7 @@
     <string name="explicacion">Write your question here and press the button to answer</string>
     <string name="aceptar">OK</string>
     <string name="title_activity_resultado">ResultadoActivity</string>
-    <string name="compartir">Share in WhatsApp</string>
+    <string name="compartir">Share</string>
     <string name="otra">New Question</string>
     <string name="si">YES</string>
     <string name="no">NO</string>
@@ -15,8 +15,10 @@
     <string name="develop">About</string>
 
     <string name="pregun1">To the question:</string>
-    <string name="pregun2">- Future App has answered:</string>
-    <string name="pregun3">Download it in:</string>
+    <string name="pregun2">Future App has answered:</string>
+    <string name="pregun3">Download it in: </string>
+
+    <string name="nuevapregunta">New question</string>
 
     <string name="palabra0">CONFIDENCE</string>
     <string name="palabra1">ACTION</string>

@@ -5,7 +5,7 @@
     <string name="explicacion">Escribe aquí tu pregunta y pulsa el botón para la respuesta</string>
     <string name="aceptar">Aceptar</string>
     <string name="title_activity_resultado">ResultadoActivity</string>
-    <string name="compartir">Compartir en WhatsApp</string>
+    <string name="compartir">Compartir</string>
     <string name="otra">Hacer otra pregunta</string>
     <string name="si">SI</string>
     <string name="no">NO</string>
@@ -13,9 +13,12 @@
     <string name="hint">¿Como va a ser mi futuro?</string>
 
     <string name="pregun1">A la pregunta:</string>
-    <string name="pregun2">- Future App ha respondido:</string>
-    <string name="pregun3">Descargarla en:</string>
+    <string name="pregun2">Future App ha respondido:</string>
+    <string name="pregun3">Descargarla en: </string>
     <string name="develop">Acerca de</string>
+
+    <string name="nuevapregunta">Nueva pregunta</string>
+
 
     <string name="palabra0">CONFIANZA</string>
     <string name="palabra1">ACCION</string>

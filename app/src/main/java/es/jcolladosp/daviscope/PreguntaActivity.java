@@ -10,12 +10,16 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.inputmethod.EditorInfo;
+import android.widget.TextView;
+import android.view.KeyEvent;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.util.DisplayMetrics;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -48,6 +52,7 @@ public class PreguntaActivity extends BaseActivity implements View.OnClickListen
         setListeners();
         findViews();
         generateBackground();
+        listernerIntro();
 
         mp = MediaPlayer.create(this, R.raw.sonido);
 
@@ -56,13 +61,22 @@ public class PreguntaActivity extends BaseActivity implements View.OnClickListen
             actionBar.setCustomView(R.layout.actionbar_custom);
             actionBar.setDisplayShowTitleEnabled(false);
             actionBar.setDisplayShowCustomEnabled(true);
-
-
-
         }
+        edpregunta.setOnKeyListener(new View.OnKeyListener() {
 
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (event.getAction() == KeyEvent.ACTION_DOWN
+                        && event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
+                    Log.i("event", "captured");
+                        preguntaNueva();
+                    return false;
+                }
+
+                return false;
+            }
+        });
     }
-
 
 
     @Override
@@ -112,19 +126,21 @@ public class PreguntaActivity extends BaseActivity implements View.OnClickListen
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
+
     private void setListeners() {
         aceptar = (Button) findViewById(R.id.btAceptar);
         aceptar.setOnClickListener(this);
 
-         }
-    private void findViews(){
+    }
+
+    private void findViews() {
         edpregunta = (EditText) findViewById(R.id.edPregunta);
 
     }
 
-    private void developAlert(){
+    private void developAlert() {
 
-        TextView tv  = new TextView(this);
+        TextView tv = new TextView(this);
         tv.setMovementMethod(LinkMovementMethod.getInstance());
         tv.setText(Html.fromHtml("Idea original: David Jousselin " + "<br />" + "<a href=\"mailto:jousselin.new.antique@gmail.com\">Enviar Email</a>" +
                 "<br />" + "<br />" + "Desarrollo: Jose Collado" + "<br />" + "<a href=\"mailto:jose528@gmail.com\">Enviar Email</a>" + "<br />" + "<a href=https://github.com/jcolladosp>GitHub</a>"));
@@ -141,12 +157,11 @@ public class PreguntaActivity extends BaseActivity implements View.OnClickListen
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
-    private void generateBackground(){
+    private void generateBackground() {
         fondo = (RelativeLayout) findViewById(R.id.fondoPregunta);
 
-         ArrayList<Integer> numbers =generateRandomNumbers(1, 4);
-        switch(numbers.get(0))
-        {
+        ArrayList<Integer> numbers = generateRandomNumbers(1, 4);
+        switch (numbers.get(0)) {
             case 0:
                 fondo.setBackground(getResources().getDrawable(R.drawable.fondo1));
                 break;
@@ -166,12 +181,12 @@ public class PreguntaActivity extends BaseActivity implements View.OnClickListen
 
     }
 
-    public ArrayList generateRandomNumbers(int nnumbers,int maxnumber){
+    public ArrayList generateRandomNumbers(int nnumbers, int maxnumber) {
         ArrayList<Integer> numbers = new ArrayList<Integer>();
         Random randomGenerator = new Random();
         while (numbers.size() < nnumbers) {
 
-            int random = randomGenerator .nextInt(maxnumber);
+            int random = randomGenerator.nextInt(maxnumber);
             if (!numbers.contains(random)) {
                 numbers.add(random);
             }
@@ -179,8 +194,8 @@ public class PreguntaActivity extends BaseActivity implements View.OnClickListen
         return numbers;
     }
 
-    private void selectLanguage(){
-        final CharSequence[] items = {" English "," Español "," Français "};
+    private void selectLanguage() {
+        final CharSequence[] items = {" English ", " Español ", " Français "};
 
         // Creating and Building the Dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -209,6 +224,7 @@ public class PreguntaActivity extends BaseActivity implements View.OnClickListen
         levelDialog = builder.create();
         levelDialog.show();
     }
+
     public void setLocale(String lang) {
         Locale myLocale = new Locale(lang);
         Resources res = getResources();
@@ -220,19 +236,29 @@ public class PreguntaActivity extends BaseActivity implements View.OnClickListen
         startActivity(refresh);
         finish();
     }
+
+    public void preguntaNueva() {
+        mp.start();
+        pregunta = edpregunta.getText().toString();
+
+        Intent i = new Intent(getApplicationContext(), ResultadoActivity.class);
+        i.putExtra("pregunta", pregunta);
+        startActivity(i);
+        edpregunta.setText("");
+    }
+
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btAceptar) {
 
-            mp.start();
-            pregunta = edpregunta.getText().toString();
-
-            Intent i = new Intent(getApplicationContext(), ResultadoActivity.class);
-            i.putExtra("pregunta", pregunta);
-            startActivity(i);
-            edpregunta.setText("");
+            preguntaNueva();
 
         }
+
+    }
+
+    public void listernerIntro() {
+
 
     }
 }
