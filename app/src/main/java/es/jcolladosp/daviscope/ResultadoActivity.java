@@ -1,5 +1,6 @@
 package es.jcolladosp.daviscope;
 
+import android.animation.ValueAnimator;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -44,11 +45,25 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
     TextView txPalabra1;
     TextView txPalabra2;
     TextView txPalabra3;
+
+    TextView porcen1;
+    TextView porcen2;
+    TextView porcen3;
+
     AlertDialog levelDialog;
     RelativeLayout fondo;
     Animation an1;
     Animation an2;
     Animation an3;
+    Animation an4;
+
+
+
+
+    int porcenta1;
+    int porcenta2;
+    int porcenta3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,12 +79,14 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
         findViews();
         generateBackground(numbers.get(0));
         generateRandomWords();
-
+        generatePorcen();
 
 
         an1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
         an2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
         an3 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
+
+        an4 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in2);
 
         an1.setAnimationListener(this);
         an2.setAnimationListener(this);
@@ -94,6 +111,41 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
         txPalabra1.setVisibility(View.VISIBLE);
         txPalabra1.startAnimation(an1);
 
+
+    }
+
+    private void startCountAnimation1() {
+        ValueAnimator animator = new ValueAnimator();
+        animator.setObjectValues(0, porcenta1);
+        animator.setDuration(2000);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            public void onAnimationUpdate(ValueAnimator animation) {
+                porcen1.setText("" + (int) animation.getAnimatedValue()+"%" );
+            }
+        });
+        animator.start();
+    }
+    private void startCountAnimation2() {
+        ValueAnimator animator = new ValueAnimator();
+        animator.setObjectValues(0, porcenta2);
+        animator.setDuration(2000);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            public void onAnimationUpdate(ValueAnimator animation) {
+                porcen2.setText("" + (int) animation.getAnimatedValue()+"%");
+            }
+        });
+        animator.start();
+    }
+    private void startCountAnimation3() {
+        ValueAnimator animator = new ValueAnimator();
+        animator.setObjectValues(0, porcenta3);
+        animator.setDuration(2000);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            public void onAnimationUpdate(ValueAnimator animation) {
+                porcen3.setText("" + (int) animation.getAnimatedValue()+"%");
+            }
+        });
+        animator.start();
     }
 
     @Override
@@ -120,6 +172,20 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
             txPalabra3.setVisibility(View.VISIBLE);
             txPalabra3.startAnimation(an3);
 
+        }
+        if (animation == an3) {
+            porcen1.setVisibility(View.VISIBLE);
+            porcen2.setVisibility(View.VISIBLE);
+            porcen3.setVisibility(View.VISIBLE);
+
+            porcen1.startAnimation(an4);
+            porcen2.startAnimation(an4);
+            porcen3.startAnimation(an4);
+
+
+            startCountAnimation1();
+            startCountAnimation2();
+            startCountAnimation3();
         }
 
     }
@@ -229,6 +295,24 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
         txPalabra3 = (TextView) findViewById(R.id.txPalabra3);
 
 
+        porcen1 = (TextView) findViewById(R.id.porcen1);
+        porcen2 = (TextView) findViewById(R.id.porcen2);
+        porcen3 = (TextView) findViewById(R.id.porcen3);
+
+    }
+
+    private void generatePorcen(){
+
+        ArrayList<Integer> nporcen = generateRandomNumbers(1,100);
+        porcenta1 = 100 - nporcen.get(0);
+
+        ArrayList<Integer> nporcen2 = generateRandomNumbers(1,porcenta1);
+
+        porcenta2 = nporcen2.get(0);
+
+        porcenta3 = 100 - porcenta1 - porcenta2;
+
+        if(porcenta3<0){generatePorcen();}
     }
 
     public void onClickShare(View view) {
