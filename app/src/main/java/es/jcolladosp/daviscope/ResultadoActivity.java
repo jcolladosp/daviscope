@@ -237,8 +237,7 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_TEXT,  getResources().getString(R.string.pregun1)+ " "+ preguntaObtenida +"\n"+"\n" +" "+ getResources().getString(R.string.pregun2) +"\n"
                +"-" + txPalabra1.getText().toString() +", "  + txPalabra2.getText().toString() +", " + txPalabra3.getText().toString() + ". "
-                +"\n" + "\n"+getResources().getString(R.string.pregun3)
-                +  "http://bit.ly/futureapp");
+                +"\n" + "\n"+getResources().getString(R.string.pregun3)                +  "http://bit.ly/future_app");
         startActivity(intent);
 
     }
