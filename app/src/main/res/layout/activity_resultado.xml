@@ -150,7 +150,7 @@
                 android:layout_alignTop="@+id/txPalabra1"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginRight="5dp" />
+                android:layout_marginRight="1dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -164,7 +164,7 @@
                 android:layout_alignTop="@+id/txPalabra2"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginRight="5dp" />
+                android:layout_marginRight="1dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -178,7 +178,7 @@
                 android:layout_alignTop="@+id/txPalabra3"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginRight="5dp" />
+                android:layout_marginRight="1dp" />
 
         </RelativeLayout>
     </ScrollView>
