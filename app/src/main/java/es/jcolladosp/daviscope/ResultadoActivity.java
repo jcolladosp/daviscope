@@ -304,23 +304,40 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
     private void generatePorcen(){
 
         ArrayList<Integer> nporcen = generateRandomNumbers(1,100);
-        porcenta1 = 100 - nporcen.get(0);
+        int porcenta_1 =  nporcen.get(0);
 
-        ArrayList<Integer> nporcen2 = generateRandomNumbers(1,porcenta1);
+        int xd = 100 - porcenta_1;
 
-        porcenta2 = nporcen2.get(0);
+        ArrayList<Integer> nporcen2 = generateRandomNumbers(1,xd);
 
-        porcenta3 = 100 - porcenta1 - porcenta2;
+        int porcenta_2 = nporcen2.get(0);
 
-        if(porcenta3<0){generatePorcen();}
+        int porcenta_3 = xd - porcenta_2;
+
+
+
+        ArrayList<Integer> nlugares = generateRandomNumbers(3,3);
+
+        ArrayList<Integer> numeros = new ArrayList<Integer>();
+
+        numeros.add(0,porcenta_1);
+        numeros.add(1,porcenta_2);
+        numeros.add(2,porcenta_3);
+
+        porcenta1 = numeros.get(nlugares.get(0));
+        porcenta2 = numeros.get(nlugares.get(1));
+        porcenta3 = numeros.get(nlugares.get(2));
+
     }
 
     public void onClickShare(View view) {
 
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_TEXT,  getResources().getString(R.string.pregun1)+ " "+ preguntaObtenida +"\n"+"\n" +" "+ getResources().getString(R.string.pregun2) +"\n"
-               +"-" + txPalabra1.getText().toString() +", "  + txPalabra2.getText().toString() +", " + txPalabra3.getText().toString() + ". "
+        intent.putExtra(Intent.EXTRA_TEXT,  getResources().getString(R.string.pregun1)+ " "+ preguntaObtenida +"\n"+"\n" +" "+ getResources().getString(R.string.pregun2) +"\n"+"\n"
+               +"-" + txPalabra1.getText().toString() +"      " + porcenta1 +"%" +"\n"+
+                "-"  + txPalabra2.getText().toString() +"      " + porcenta2 +"%" +"\n"
+               +"-" + txPalabra3.getText().toString() + "      " + porcenta3 +"%" 
                 +"\n" + "\n"+getResources().getString(R.string.pregun3)                +  "http://bit.ly/future_app");
         startActivity(intent);
 
