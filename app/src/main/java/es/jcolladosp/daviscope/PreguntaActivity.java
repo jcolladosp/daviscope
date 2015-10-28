@@ -33,6 +33,7 @@ import java.util.Locale;
 import java.util.Random;
 
 import es.jcolladosp.daviscope.Util.BaseActivity;
+import es.jcolladosp.daviscope.Util.Tipografias;
 
 public class PreguntaActivity extends BaseActivity implements View.OnClickListener {
 
@@ -54,6 +55,8 @@ public class PreguntaActivity extends BaseActivity implements View.OnClickListen
         generateBackground();
         listernerIntro();
 
+        TextView explicacion = (TextView) findViewById(R.id.txExplicacion);
+        explicacion.setTypeface(Tipografias.getTypeface(this, ""));
         mp = MediaPlayer.create(this, R.raw.sonido);
 
         ActionBar actionBar = getSupportActionBar();
@@ -129,6 +132,7 @@ public class PreguntaActivity extends BaseActivity implements View.OnClickListen
 
     private void setListeners() {
         aceptar = (Button) findViewById(R.id.btAceptar);
+        aceptar.setTypeface(Tipografias.getTypeface(this, ""));
         aceptar.setOnClickListener(this);
 
     }

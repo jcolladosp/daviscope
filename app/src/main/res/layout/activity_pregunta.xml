@@ -53,7 +53,8 @@
             android:layout_below="@+id/edPregunta"
             android:layout_centerHorizontal="true"
             android:background="@color/primary"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textSize="18dp" />
     </RelativeLayout>
 
 </RelativeLayout>

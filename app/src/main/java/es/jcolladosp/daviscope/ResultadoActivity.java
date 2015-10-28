@@ -35,6 +35,7 @@ import android.content.res.Resources;
 import android.util.DisplayMetrics;
 
 import es.jcolladosp.daviscope.Util.BaseActivity;
+import es.jcolladosp.daviscope.Util.Tipografias;
 
 public class ResultadoActivity extends BaseActivity implements View.OnClickListener, Animation.AnimationListener {
     RelativeLayout volver;
@@ -282,6 +283,7 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
         volver = (RelativeLayout) findViewById(R.id.lyNueva);
         volver.setOnClickListener(this);
 
+
         compartir = (RelativeLayout) findViewById(R.id.lyShare);
         compartir.setOnClickListener(this);
 
@@ -294,11 +296,24 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
         txPalabra2 = (TextView) findViewById(R.id.txPalabra2);
         txPalabra3 = (TextView) findViewById(R.id.txPalabra3);
 
+        TextView bt1 = (TextView) findViewById(R.id.bt1);
+        TextView bt2 = (TextView) findViewById(R.id.bt2);
 
         porcen1 = (TextView) findViewById(R.id.porcen1);
         porcen2 = (TextView) findViewById(R.id.porcen2);
         porcen3 = (TextView) findViewById(R.id.porcen3);
 
+
+        txPalabra1.setTypeface(Tipografias.getTypeface(this, ""));
+        txPalabra2.setTypeface(Tipografias.getTypeface(this, ""));
+        txPalabra3.setTypeface(Tipografias.getTypeface(this, ""));
+
+        porcen1.setTypeface(Tipografias.getTypeface(this, ""));
+        porcen2.setTypeface(Tipografias.getTypeface(this, ""));
+        porcen3.setTypeface(Tipografias.getTypeface(this, ""));
+
+        bt1.setTypeface(Tipografias.getTypeface(this, ""));
+        bt2.setTypeface(Tipografias.getTypeface(this, ""));
     }
 
     private void generatePorcen(){
@@ -337,7 +352,7 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
         intent.putExtra(Intent.EXTRA_TEXT,  getResources().getString(R.string.pregun1)+ " "+ preguntaObtenida +"\n"+"\n" +" "+ getResources().getString(R.string.pregun2) +"\n"+"\n"
                +"-" + txPalabra1.getText().toString() +"      " + porcenta1 +"%" +"\n"+
                 "-"  + txPalabra2.getText().toString() +"      " + porcenta2 +"%" +"\n"
-               +"-" + txPalabra3.getText().toString() + "      " + porcenta3 +"%" 
+               +"-" + txPalabra3.getText().toString() + "      " + porcenta3 +"%"
                 +"\n" + "\n"+getResources().getString(R.string.pregun3)                +  "http://bit.ly/future_app");
         startActivity(intent);
 
