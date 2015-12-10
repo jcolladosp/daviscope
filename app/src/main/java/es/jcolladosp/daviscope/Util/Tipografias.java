@@ -9,7 +9,7 @@ public class Tipografias {
     public static Typeface getTypeface(Context context, String type) {
         Typeface mTypeFace;
 
-            mTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/Livingst.ttf");
+            mTypeFace = Typeface.createFromAsset(context.getAssets(), "fonts/All.ttf");
 
         return mTypeFace;
     }

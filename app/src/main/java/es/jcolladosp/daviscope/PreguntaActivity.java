@@ -139,6 +139,7 @@ public class PreguntaActivity extends BaseActivity implements View.OnClickListen
 
     private void findViews() {
         edpregunta = (EditText) findViewById(R.id.edPregunta);
+        edpregunta.setTypeface(Tipografias.getTypeface(this, ""));
 
     }
 

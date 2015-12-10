@@ -3,6 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:gravity="center"
+
     android:orientation="horizontal" >
 
     <ImageView
@@ -12,6 +13,7 @@
         android:clickable="false"
         android:focusable="false"
         android:longClickable="false"
-        android:src="@drawable/logofrances" />
+
+        android:src="@drawable/logo2" />
 
 </LinearLayout>

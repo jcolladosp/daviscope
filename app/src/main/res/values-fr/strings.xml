@@ -3,7 +3,7 @@
 
 
     <string name="action_settings">Choisir la langue</string>
-    <string name="explicacion">Ecrivez votre question ici et appuyez sur le bouton pour votre réponse</string>
+    <string name="explicacion">Ecrivez votre question et appuyez sur le bouton Ok pour votre connaître votre réponse</string>
     <string name="aceptar">OK</string>
     <string name="title_activity_resultado">ResultadoActivity</string>
     <string name="compartir">Partager</string>
@@ -11,11 +11,11 @@
     <string name="si">OUI</string>
     <string name="no">NON</string>
     <string name="email">Contact</string>
-    <string name="hint">Comment sera mon avenir?</string>
+    <string name="hint">Quel sera mon avenir?</string>
 
     <string name="pregun1">A la question:</string>
     <string name="pregun2">Future-App a répondue:</string>
-    <string name="pregun3">Télécharger en: </string>
+    <string name="pregun3">Télécharger Future.app en: </string>
     <string name="develop">About</string>
 
     <string name="nuevapregunta">Nouvelle question</string>
@@ -33,7 +33,7 @@
     <string name="palabra10">AMOUR</string>
     <string name="palabra11">ALLIANCE</string>
     <string name="palabra12">EVOLUTION</string>
-    <string name="palabra13">SUCCES</string>
+    <string name="palabra13">ASCENCION</string>
     <string name="palabra14">JUSTE</string>
     <string name="palabra15">EQUITABLE</string>
     <string name="palabra16">SOLITUDE</string>
@@ -45,7 +45,7 @@
     <string name="palabra22">ILLUSION</string>
     <string name="palabra23">PASSION PASSAGERE</string>
     <string name="palabra24">RENAISSANCE</string>
-    <string name="palabra25">CHANGEMENT RADICALE</string>
+    <string name="palabra25">SURPRISE</string>
     <string name="palabra26">PERSEVERANCE</string>
     <string name="palabra27">PATIENCE</string>
     <string name="palabra28">RETRAITE</string>
@@ -55,12 +55,12 @@
     <string name="palabra32">PROGRES</string>
     <string name="palabra33">SORTIE</string>
     <string name="palabra34">MEFIANCE</string>
-    <string name="palabra35">TEMPS DIFFICILES</string>
-    <string name="palabra36">PRISE DE CONSCIENCE</string>
+    <string name="palabra35">HARMONIE</string>
+    <string name="palabra36">REVELATION</string>
     <string name="palabra37">MISE AU POINT</string>
     <string name="palabra38">SERENITE</string>
-    <string name="palabra39">MAITRISE</string>
-    <string name="palabra40">TESIONS</string>
+    <string name="palabra39">PRUDENCE</string>
+    <string name="palabra40">TENSIONS</string>
     <string name="palabra41">INSECURITE</string>
 
 

@@ -3,7 +3,7 @@
 
 
     <string name="action_settings">Select language</string>
-    <string name="explicacion">Write your question here and press the button to answer</string>
+    <string name="explicacion">Write your question and press OK for yor answer</string>
     <string name="aceptar">OK</string>
     <string name="title_activity_resultado">ResultadoActivity</string>
     <string name="compartir">Share</string>
@@ -16,7 +16,7 @@
 
     <string name="pregun1">To the question:</string>
     <string name="pregun2">Future App has answered:</string>
-    <string name="pregun3">Download it in: </string>
+    <string name="pregun3">Download Future.app in: </string>
 
     <string name="nuevapregunta">New question</string>
 
@@ -33,7 +33,7 @@
     <string name="palabra10">LOVE</string>
     <string name="palabra11">ALLIANCE</string>
     <string name="palabra12">EVOLUTION</string>
-    <string name="palabra13">SUCCESS</string>
+    <string name="palabra13">ASCENT</string>
     <string name="palabra14">JUST</string>
     <string name="palabra15">FAIR</string>
     <string name="palabra16">ALONE</string>
@@ -45,7 +45,7 @@
     <string name="palabra22">ILLUSION</string>
     <string name="palabra23">TRANSIENT PASSION</string>
     <string name="palabra24">REBIRTH</string>
-    <string name="palabra25">RADICAL CHANGE</string>
+    <string name="palabra25">UPSET</string>
     <string name="palabra26">SINGLENESS</string>
     <string name="palabra27">FORBEARANCE</string>
     <string name="palabra28">RETIREMENT</string>
@@ -55,11 +55,11 @@
     <string name="palabra32">PROGRESS</string>
     <string name="palabra33">EXIT</string>
     <string name="palabra34">MISTRUST</string>
-    <string name="palabra35">DIFFICULT TIMES</string>
-    <string name="palabra36">AWARENESS</string>
-    <string name="palabra37">EDIT</string>
+    <string name="palabra35">HARMONY</string>
+    <string name="palabra36">DISCLOSURE</string>
+    <string name="palabra37">COMMENTARY</string>
     <string name="palabra38">SERENITY</string>
-    <string name="palabra39">MASTERSHIP</string>
+    <string name="palabra39">PRUDENCE</string>
     <string name="palabra40">STRESS</string>
     <string name="palabra41">INSECURITY</string>
 

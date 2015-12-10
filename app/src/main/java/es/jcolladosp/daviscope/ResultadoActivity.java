@@ -5,6 +5,9 @@ import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v7.app.ActionBar;
@@ -25,6 +28,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -102,10 +106,12 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             getSupportActionBar().setElevation(0);
+
             actionBar.setCustomView(R.layout.actionbar_custom);
             actionBar.setDisplayShowTitleEnabled(false);
             actionBar.setDisplayShowCustomEnabled(true);
             actionBar.setDisplayHomeAsUpEnabled(true);
+
 
 
         }
@@ -291,6 +297,7 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
 
     private void findViews(){
         txPregunta = (TextView) findViewById(R.id.txPregunta);
+        txPregunta.setTypeface(Tipografias.getTypeface(this, ""));
 
         txPalabra1 = (TextView) findViewById(R.id.txPalabra1);
         txPalabra2 = (TextView) findViewById(R.id.txPalabra2);
@@ -304,6 +311,8 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
         porcen3 = (TextView) findViewById(R.id.porcen3);
 
 
+
+
         txPalabra1.setTypeface(Tipografias.getTypeface(this, ""));
         txPalabra2.setTypeface(Tipografias.getTypeface(this, ""));
         txPalabra3.setTypeface(Tipografias.getTypeface(this, ""));
@@ -311,6 +320,7 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
         porcen1.setTypeface(Tipografias.getTypeface(this, ""));
         porcen2.setTypeface(Tipografias.getTypeface(this, ""));
         porcen3.setTypeface(Tipografias.getTypeface(this, ""));
+
 
         bt1.setTypeface(Tipografias.getTypeface(this, ""));
         bt2.setTypeface(Tipografias.getTypeface(this, ""));
@@ -347,13 +357,19 @@ public class ResultadoActivity extends BaseActivity implements View.OnClickListe
 
     public void onClickShare(View view) {
 
+        DecimalFormat formatter = new DecimalFormat("00");
+        String aFormatted1 = formatter.format(porcenta1);
+        String aFormatted2 = formatter.format(porcenta2);
+        String aFormatted3 = formatter.format(porcenta3);
+
+
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_TEXT,  getResources().getString(R.string.pregun1)+ " "+ preguntaObtenida +"\n"+"\n" +" "+ getResources().getString(R.string.pregun2) +"\n"+"\n"
-               +"-" + txPalabra1.getText().toString() +"      " + porcenta1 +"%" +"\n"+
-                "-"  + txPalabra2.getText().toString() +"      " + porcenta2 +"%" +"\n"
-               +"-" + txPalabra3.getText().toString() + "      " + porcenta3 +"%"
-                +"\n" + "\n"+getResources().getString(R.string.pregun3)                +  "http://bit.ly/future_app");
+               +"-  " + aFormatted1 +"%" + "      " + txPalabra1.getText().toString()+"\n"
+               +"-  " + aFormatted2 +"%" + "      " + txPalabra2.getText().toString()+"\n"
+               +"-  " + aFormatted3 +"%" + "      " + txPalabra3.getText().toString()+"\n"
+               + "\n"+getResources().getString(R.string.pregun3)                +  "http://bit.ly/future_app");
         startActivity(intent);
 
     }
